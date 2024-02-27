@@ -66,7 +66,9 @@ namespace Game
         private void LoadHotFileFailCallback(string str)
         {
             LogHelper.LogError("热更资源加载失败,Error:" + str);
-            AppTools.ShowTipsUI<CommonTwoSelectTipUI>().ShowContent("热更资源数据加载失败，是否重试？", "资源下载失败", "退出", "重试", LoadHotFile, LoadCancelCallBack);
+            AppTools.ShowTipsUI<CommonTwoSelectTipUI>((ui) => {
+                ui.ShowContent("热更资源数据加载失败，是否重试？", "资源下载失败", "退出", "重试", LoadHotFile, LoadCancelCallBack);
+            });
         }
 
         /// <summary>

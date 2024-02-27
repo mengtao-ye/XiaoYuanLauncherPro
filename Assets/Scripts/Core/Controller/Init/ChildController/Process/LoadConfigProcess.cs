@@ -39,7 +39,9 @@ namespace Game
         private void LoadConfigFailCallback(string str)
         {
             LogHelper.LogError("配置数据加载失败,Error:" + str);
-            AppTools.ShowTipsUI<CommonTwoSelectTipUI>().ShowContent("配置文件数据加载失败，是否重试？", "配置下载失败", "退出", "重试", StartDownLoadOriginalFile, LoadCancelCallBack);
+            AppTools.ShowTipsUI<CommonTwoSelectTipUI>((ui) => {
+                ui.ShowContent("配置文件数据加载失败，是否重试？", "配置下载失败", "退出", "重试", StartDownLoadOriginalFile, LoadCancelCallBack);
+            });
         }
 
         private void LoadConfigSuccessCallback(byte[] bytes)

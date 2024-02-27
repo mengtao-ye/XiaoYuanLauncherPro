@@ -53,12 +53,15 @@ namespace Game
             #endregion
             YFrameworkHelper.Instance = new XiaoYuanYFrameworkHelper();
             TotweenModule.Init();
+            LogHelper.Instance = new UnityLogHelper();
+            ResourceHelper.Instance = new ResourcesLoadHelper();
+
         }
         private void Awake()
         {
             InitData();
             processController = new ProcessController();
-            center = new Center(new UnityLogHelper(), new ResourceHelper());
+            center = new Center();
             mSceneManager = new XiaoYuanSceneManager(center, new SceneMapper());
             mBridgeManager = new BridgeManager(center);
             packageBridgeManaegr = new PackageBridgeManager(center);
@@ -93,17 +96,17 @@ namespace Game
         /// 显示LogUI
         /// </summary>
         /// <typeparam name="T"></typeparam>
-        public T ShowLogUI<T>() where T : BaseCustomLogUI, new()
+        public void ShowLogUI<T>(Action<T> action = null) where T : BaseCustomLogUI, new()
         {
-            return curCanvas.logUIManager.ShowLogUI<T>();
+             curCanvas.logUIManager.ShowLogUI<T>(action);
         }
         /// <summary>
         /// 显示提示UI
         /// </summary>
         /// <typeparam name="T"></typeparam>
-        public T ShowTipsUI<T>() where T : BaseCustomTipsUI, new()
+        public void  ShowTipsUI<T>(Action<T> action = null) where T : BaseCustomTipsUI, new()
         {
-            return curCanvas.showTipsPanel.ShowTipsUI<T>();
+             curCanvas.showTipsPanel.ShowTipsUI<T>(action);
         }
         /// <summary>
         /// 显示提示UI
@@ -117,17 +120,17 @@ namespace Game
         /// 获取提示UI
         /// </summary>
         /// <typeparam name="T"></typeparam>
-        public T GetTipsUI<T>() where T : BaseCustomTipsUI, new()
+        public void GetTipsUI<T>(Action<T> action = null) where T : BaseCustomTipsUI, new()
         {
-            return curCanvas.showTipsPanel.GetTipsUI<T>();
+             curCanvas.showTipsPanel.GetTipsUI<T>(action);
         }
         /// <summary>
         /// 显示提示Panel
         /// </summary>
         /// <typeparam name="T"></typeparam>
-        public T ShowPanel<T>() where T : BaseCustomPanel, new()
+        public void ShowPanel<T>(Action<T> action = null) where T : BaseCustomPanel, new()
         {
-            return curCanvas.ShowPanel<T>();
+             curCanvas.ShowPanel<T>(action);
         }
         /// <summary>
         /// 显示提示Panel

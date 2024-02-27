@@ -357,7 +357,6 @@
     <Compile Include="Assets\Scripts\Core\Module\ReflectionDataModule\UserData\Data\CallBackData\Base\BaseUnityUserDataCallBack.cs" />
     <Compile Include="Assets\Scripts\YFramework\Core\Module\ToTween\Entity\Position\ToPositionTween.cs" />
     <Compile Include="Assets\Scripts\YFramework\Core\UI\Log\LogUIManager\LogUIManager.cs" />
-    <Compile Include="Assets\Scripts\YFramework\Core\Module\ResourceModule\Resource.cs" />
     <Compile Include="Assets\Scripts\Core\Controller\Custom\BaseCustomChildController.cs" />
     <Compile Include="Assets\Scripts\YFramework\Core\Extend\RectTransformExtend.cs" />
     <Compile Include="Assets\Scripts\YFramework\Core\Manager\SocketManager\Tcp\Message.cs" />
@@ -392,6 +391,7 @@
     <Compile Include="Assets\Scripts\Core\Data\Data\SocketData\IPAddressConstData.cs" />
     <Compile Include="Assets\Scripts\YFramework\Core\Extend\ToggleGroupExtend.cs" />
     <Compile Include="Assets\Scripts\YFramework\Core\Module\ToTween\Base\FatherBase\IToTween.cs" />
+    <Compile Include="Assets\Scripts\YFramework\Core\Module\ResourceModule\ResourceHelper.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Plugin\Aliyun\Aliyun.OSS.dll" />

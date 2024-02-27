@@ -33,7 +33,9 @@ namespace Game
         private void LoadVersionFail(string str)
         {
             LogHelper.LogError("版本数据加载失败,Error:" + str);
-            AppTools.ShowTipsUI<CommonTwoSelectTipUI>().ShowContent("版本数据下载失败，是否重试？", "资源下载失败", "退出", "重试", LoadVersionSureCallBack, LoadCancelCallBack);
+            AppTools.ShowTipsUI<CommonTwoSelectTipUI>((ui) => {
+                ui.ShowContent("版本数据下载失败，是否重试？", "资源下载失败", "退出", "重试", LoadVersionSureCallBack, LoadCancelCallBack);
+            });
         }
         /// <summary>
         /// 加载版本失败后确认按钮回调
@@ -59,7 +61,9 @@ namespace Game
             if (version.IsNullOrEmpty())
             {
                 LogHelper.LogError("版本数据加载失败");
-                AppTools.ShowTipsUI<CommonTwoSelectTipUI>().ShowContent("版本数据下载失败，是否重试？", "资源下载失败", "退出", "重试", LoadVersionSureCallBack, LoadCancelCallBack);
+                AppTools.ShowTipsUI<CommonTwoSelectTipUI>((ui => {
+                    ui.ShowContent("版本数据下载失败，是否重试？", "资源下载失败", "退出", "重试", LoadVersionSureCallBack, LoadCancelCallBack);
+                }));
                 return;
             }
             string versionPath = OssData.GetLocalOriginalDir(ABTag.Main) + "/Version.txt";

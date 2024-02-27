@@ -1,4 +1,6 @@
-﻿namespace Game
+﻿using System;
+
+namespace Game
 {
     public static partial class AppTools
     {
@@ -7,17 +9,17 @@
         /// 显示LogUI
         /// </summary>
         /// <typeparam name="T"></typeparam>
-        public static T ShowLogUI<T>() where T : BaseCustomLogUI, new()
+        public static void ShowLogUI<T>(Action<T> action = null) where T : BaseCustomLogUI, new()
         {
-            return GameCenter.Instance. curCanvas.logUIManager.ShowLogUI<T>();
+             GameCenter.Instance. curCanvas.logUIManager.ShowLogUI<T>(action);
         } 
         /// <summary>
         /// 显示提示UI
         /// </summary>
         /// <typeparam name="T"></typeparam>
-        public static T ShowTipsUI<T>() where T : BaseCustomTipsUI, new()
+        public static void ShowTipsUI<T>(Action<T> action = null) where T : BaseCustomTipsUI, new()
         {
-            return GameCenter.Instance.curCanvas.showTipsPanel.ShowTipsUI<T>();
+             GameCenter.Instance.curCanvas.showTipsPanel.ShowTipsUI<T>(action);
         }
         /// <summary>
         /// 显示提示UI
@@ -31,17 +33,17 @@
         /// 获取提示UI
         /// </summary>
         /// <typeparam name="T"></typeparam>
-        public static T GetTipsUI<T>() where T : BaseCustomTipsUI, new()
+        public static void GetTipsUI<T>(Action<T> action = null) where T : BaseCustomTipsUI, new()
         {
-            return GameCenter.Instance.curCanvas.showTipsPanel.GetTipsUI<T>();
+             GameCenter.Instance.curCanvas.showTipsPanel.GetTipsUI<T>(action);
         }
         /// <summary>
         /// 显示提示Panel
         /// </summary>
         /// <typeparam name="T"></typeparam>
-        public static T ShowPanel<T>() where T : BaseCustomPanel, new()
+        public static void ShowPanel<T>(Action<T> action = null) where T : BaseCustomPanel, new()
         {
-            return GameCenter.Instance.curCanvas.ShowPanel<T>();
+             GameCenter.Instance.curCanvas.ShowPanel<T>(action);
         }
         /// <summary>
         /// 显示提示Panel
@@ -60,7 +62,10 @@
         /// <param name="msg"></param>
         public static void ToastSuccess<T>(T msg)
         {
-            GameCenter.Instance.ShowLogUI<MidLogUI>().ShowContent(msg.ToString(), NotifyType.Success);
+            GameCenter.Instance.ShowLogUI<MidLogUI>((ui) =>
+            {
+                ui.ShowContent(msg.ToString(), NotifyType.Success);
+            });
         }
 
         /// <summary>
@@ -70,7 +75,10 @@
         /// <param name="msg"></param>
         public static void ToastError<T>(T msg)
         {
-            GameCenter.Instance.ShowLogUI<MidLogUI>().ShowContent(msg.ToString(), NotifyType.Error);
+            GameCenter.Instance.ShowLogUI<MidLogUI>((ui) =>
+            {
+                ui.ShowContent(msg.ToString(), NotifyType.Error);
+            });
         }
 
         /// <summary>
@@ -80,7 +88,10 @@
         /// <param name="msg"></param>
         public static void ToastNotify<T>(T msg)
         {
-            GameCenter.Instance.ShowLogUI<MidLogUI>().ShowContent(msg.ToString(), NotifyType.Notify);
+            GameCenter.Instance.ShowLogUI<MidLogUI>((ui =>
+            {
+                ui.ShowContent(msg.ToString(), NotifyType.Notify);
+            }));
         } 
         #endregion
     }

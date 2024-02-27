@@ -41,7 +41,9 @@ namespace Game
         private void LoadIntroduceFail(string content)
         {
             LogHelper.LogError("新资源介绍为空,Error:" + content);
-            AppTools.ShowTipsUI<CommonTwoSelectTipUI>().ShowContent("新资源数据加载失败，是否重试？", "资源下载失败", "退出", "重试", RetryDownLoadIntroduce, LoadCancelCallBack);
+            AppTools.ShowTipsUI<CommonTwoSelectTipUI>((ui) => {
+               ui .ShowContent("新资源数据加载失败，是否重试？", "资源下载失败", "退出", "重试", RetryDownLoadIntroduce, LoadCancelCallBack);
+            });
         }
         private void LoadIntroduceSuccess(string content)
         {
@@ -50,7 +52,9 @@ namespace Game
                 LogHelper.LogError("服务器端新版本介绍为空");
                 content = mDefaultIntroduce;
             }
-            AppTools.ShowTipsUI<HotVersionTipUI>().ShowContent(content, DownLoadHotVersionCallBack);
+            AppTools.ShowTipsUI<HotVersionTipUI>((ui) => { 
+               ui.ShowContent(content, DownLoadHotVersionCallBack);
+            });
         }
         /// <summary>
         /// 开始下载热更版本资源

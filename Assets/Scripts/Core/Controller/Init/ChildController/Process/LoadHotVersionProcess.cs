@@ -32,7 +32,9 @@ namespace Game
         private void LoadVersionFail(string str)
         {
             LogHelper.LogError("热更版本数据加载失败,Error:" + str);
-            AppTools.ShowTipsUI<CommonTwoSelectTipUI>().ShowContent("热更版本数据下载失败，是否重试？", "资源下载失败", "退出", "重试", LoadVersionSureCallBack, LoadCancelCallBack);
+            AppTools.ShowTipsUI<CommonTwoSelectTipUI>((ui) => {
+                ui.ShowContent("热更版本数据下载失败，是否重试？", "资源下载失败", "退出", "重试", LoadVersionSureCallBack, LoadCancelCallBack);
+            });
         }
         /// <summary>
         /// 加载版本失败后确认按钮回调

@@ -73,7 +73,9 @@ namespace Game
         private void LoadOriginalFileFailCallback(string str)
         {
             LogHelper.LogError("主资源加载失败,Error:" + str);
-            AppTools.ShowTipsUI<CommonTwoSelectTipUI>().ShowContent("主资源数据加载失败，是否重试？", "资源下载失败", "退出", "重试", LoadOriginalFile, LoadCancelCallBack);
+            AppTools.ShowTipsUI<CommonTwoSelectTipUI>((ui => {
+                ui.ShowContent("主资源数据加载失败，是否重试？", "资源下载失败", "退出", "重试", LoadOriginalFile, LoadCancelCallBack);
+            }));
         }
 
         /// <summary>

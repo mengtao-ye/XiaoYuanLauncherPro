@@ -47,7 +47,9 @@ namespace Game
         private void LoadConfigFailCallback(string str)
         {
             LogHelper.LogError("热更配置数据加载失败,Error:" + str);
-            AppTools.ShowTipsUI<CommonTwoSelectTipUI>().ShowContent("热更配置文件数据加载失败，是否重试？", "配置下载失败", "退出", "重试", StartDownLoadConfig, LoadCancelCallBack);
+            AppTools.ShowTipsUI<CommonTwoSelectTipUI>((ui) => {
+                ui.ShowContent("热更配置文件数据加载失败，是否重试？", "配置下载失败", "退出", "重试", StartDownLoadConfig, LoadCancelCallBack);
+            });
         }
 
         private void LoadConfigSuccessCallback(byte[] bytes)
