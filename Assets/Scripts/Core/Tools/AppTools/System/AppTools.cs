@@ -32,7 +32,7 @@ namespace Game
             }
             catch
             {
-                Log.LogError("版本异常：" + version);
+                LogHelper.LogError("版本异常：" + version);
                 return 0;
             }
         }

@@ -5,7 +5,7 @@ namespace Game
     /// <summary>
     /// Unity 内置打印消息
     /// </summary>
-    public class UnityDebug : Log
+    public class UnityLogHelper : LogHelper
     {
         protected override void LogErrorMsg<T>(T msg)
         {

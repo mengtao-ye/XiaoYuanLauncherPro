@@ -11,7 +11,7 @@ namespace Game
         }
         protected override void ConfigTwoDChildModel()
         {
-            AddChildModel(new TwoDCameraChildModel(this, new GameObject("MainCamera")));
+           
         }
     }
 }

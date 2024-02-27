@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.IO;
-using UnityEngine;
+using YFramework;
 
 namespace Game
 {
@@ -23,22 +23,23 @@ namespace Game
                 return Get(AssetBundleConstName.MAIN_NAME);
             }
         }
-
-        public static void Add(string name, string assetDict)
+        public static void Add(string packageName)
         {
-            if (mDict.ContainsKey(name)) return;
+            if (mDict.ContainsKey(packageName)) return;
             AssetBundlePair pair = new AssetBundlePair();
             LoadDll dll = new LoadDll();
-            byte[] dllData = File.ReadAllBytes(assetDict + "/hotbase");
+            string hotbasePath = GetAssetPath(packageName, "hotbase");
+            byte[] dllData = File.ReadAllBytes(hotbasePath);
             EncryptionTools.Decryption(dllData);
             dll.Init("HotBase.dll", dllData );
             pair.dll = dll;
-            AssetBundleManager assetBundleManager = new AssetBundleManager(name);
-            byte[] abData = File.ReadAllBytes(assetDict + "/config");
+            AssetBundleManager assetBundleManager = new AssetBundleManager(packageName);
+            string configPath = GetAssetPath(packageName,"config");
+            byte[] abData = File.ReadAllBytes(configPath);
             EncryptionTools.Decryption(abData);
             assetBundleManager.Init(abData);
             pair.assetBundleManager = assetBundleManager;
-            mDict.Add(name, pair);
+            mDict.Add(packageName, pair);
         }
         /// <summary>
         /// 获取资源管理器
@@ -49,6 +50,25 @@ namespace Game
         {
             if (mDict.ContainsKey(name)) return mDict[name].assetBundleManager;
             return null;
+        }
+        /// <summary>
+        /// 获取资源地址
+        /// </summary>
+        /// <param name="assetName"></param>
+        /// <returns></returns>
+        public static string GetAssetPath(string packageName,string assetName) 
+        {
+            string path = OssData.GetLocalHotDir(packageName) + "/"+ assetName;
+            if (!File.Exists(path))
+            {
+                path = OssData.GetLocalOriginalDir(packageName) +   "/" + assetName;
+                if (!File.Exists(path))
+                {
+                    LogHelper.LogError(assetName +"资源不存在");
+                    return null;
+                }
+            }
+            return path;
         }
        
     }

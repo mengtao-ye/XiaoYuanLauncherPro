@@ -18,7 +18,7 @@ namespace Game
         {
             if (mUrl.IsNullOrEmpty())
             {
-                Log.LogError("请求地址不能为空");
+                LogHelper.LogError("请求地址不能为空");
                 return;
             }
             IEnumeratorModule.StartCoroutine(IESendWebRequest());

@@ -55,7 +55,7 @@ namespace Game
         /// </summary>
         /// <param name="path"></param>
         /// <returns></returns>
-        public  ResourceItem LoadResourceItem(ulong crc,string managerName)
+        public  ResourceItem LoadResourceItem(ulong crc)
         {
             ResourceItem resource = mABResourceDict.TryGet(crc);
             if (resource == null)
@@ -64,11 +64,11 @@ namespace Game
                 return null;
             }
             resource.CRC = crc;
-            resource.AssetBundle = LoadAssetBundle(resource.ABName, managerName);
+            resource.AssetBundle = LoadAssetBundle(resource.ABName, name);
             if (!resource.Dependence.IsNullOrEmpty()) {
                 for (int i = 0; i < resource.Dependence.Count; i++)
                 {
-                    LoadAssetBundle(resource.Dependence[i], managerName);
+                    LoadAssetBundle(resource.Dependence[i], name);
                 }
             }
             return resource;
@@ -106,10 +106,9 @@ namespace Game
         /// </summary>
         /// <param name="assetBundleName"></param>
         /// <returns></returns>
-        private  AssetBundle LoadAssetBundle(string assetBundleName,string managerName) 
+        private  AssetBundle LoadAssetBundle(string assetBundleName,string packageName) 
         {
-            string path = "";
-            path =  AssetBundlePathData.GetAppPathDir(managerName) + "/" + assetBundleName;
+            string path = AssetBundleModule.GetAssetPath(packageName, assetBundleName);
             if (!File.Exists(path)) {
                 Debug.LogError(string.Format("地址{0}不存在",path));
                 return null;
@@ -119,7 +118,7 @@ namespace Game
             if (assetBundleItem == null)
             {
                 assetBundleItem = ClassPool<AssetBundleItem>.Pop();
-                assetBundleItem.SetManagerName(managerName);
+                assetBundleItem.SetManagerName(packageName);
                 byte[] bytes = File.ReadAllBytes(path);
                 EncryptionTools.Decryption(bytes);
                 AssetBundle assetBundle = AssetBundle.LoadFromMemory(bytes);

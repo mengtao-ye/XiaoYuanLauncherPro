@@ -12,5 +12,6 @@ namespace Game
             controller = new InitController(this);
             base.Awake();
         }
+        
     }
 }

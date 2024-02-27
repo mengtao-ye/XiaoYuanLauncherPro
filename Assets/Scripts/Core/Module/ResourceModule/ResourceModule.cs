@@ -19,7 +19,7 @@ namespace Game
         /// <typeparam name="T"> 加载的数据类型 </typeparam>
         /// <param name="assetName">加载的对象路径 eg:Assets/GameData/Audio.mp3</param>
         /// <returns></returns>
-        public static T Load<T>(string assetName,string managerName) where T : UnityEngine.Object
+        public static T Load<T>(string assetName,string packageName) where T : UnityEngine.Object
         {
             if (string.IsNullOrEmpty(assetName)) return default(T);
             if (AppConstData.UseABLoad)
@@ -28,7 +28,7 @@ namespace Game
                 ulong crc = CRC32Tool.GetCRC32(assetName);
                 if (!mResourceItemDict.ContainsKey(crc))
                 {
-                    resource = AssetBundleModule.Get(managerName).LoadResourceItem(crc, managerName);
+                    resource = AssetBundleModule.Get(packageName).LoadResourceItem(crc);
                     mResourceItemDict.Add(crc, resource);
                     resource.AsyncLoad = false;
                 }

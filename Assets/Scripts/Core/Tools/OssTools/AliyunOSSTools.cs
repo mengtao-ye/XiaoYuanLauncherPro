@@ -41,7 +41,7 @@ namespace Game
         {
             if (datas.IsNullOrEmpty())
             {
-                Log.LogError("LoadFileConfig data is empty or null");
+                LogHelper.LogError("LoadFileConfig data is empty or null");
                 return null;
             }
             AssetBundleFileData mAssetBundleFileData = ConverterDataTools.ToObject<AssetBundleFileData>(datas);

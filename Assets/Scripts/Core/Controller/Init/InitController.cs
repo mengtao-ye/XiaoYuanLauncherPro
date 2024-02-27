@@ -11,7 +11,7 @@ namespace Game
 
         protected override void ConfigChildController()
         {
-            AddChildController(new LoadAppOriginalFileChildController(this));
+            AddChildController(new LoadMainFileChildController(this));
         }
     }
 }

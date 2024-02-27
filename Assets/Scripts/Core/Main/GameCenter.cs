@@ -18,6 +18,8 @@ namespace Game
         public ICanvas curCanvas { get { return mSceneManager.curScene.canvas; } }
         public IModel curModel { get { return mSceneManager.curScene.model; } }
         public IController curController { get { return mSceneManager.curScene.controller; } }
+        public ProcessController processController { get; private set; }
+        public PackageBridgeManager packageBridgeManaegr { get; private set; }
         #endregion
         #region Init
         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
@@ -50,17 +52,22 @@ namespace Game
 #endif
             #endregion
             YFrameworkHelper.Instance = new XiaoYuanYFrameworkHelper();
+            TotweenModule.Init();
         }
         private void Awake()
         {
             InitData();
-            center = new Center(new UnityDebug(), new MyResources());
+            processController = new ProcessController();
+            center = new Center(new UnityLogHelper(), new ResourceHelper());
             mSceneManager = new XiaoYuanSceneManager(center, new SceneMapper());
             mBridgeManager = new BridgeManager(center);
+            packageBridgeManaegr = new PackageBridgeManager(center);
             ConfigSceneManager();
-            center.AddGame(mSceneManager);
+            center.AddGame(packageBridgeManaegr);
             center.AddGame(mBridgeManager);
+            center.AddGame(mSceneManager);
             center.Awake();
+            
         }
         private void Start()
         {
@@ -69,6 +76,7 @@ namespace Game
         private void Update()
         {
             center.Update();
+            processController.Update();
         }
         public void LateUpdate()
         {
@@ -79,6 +87,7 @@ namespace Game
             center.FixedUpdate();
         }
         #endregion
+
         #region UI
         /// <summary>
         /// 显示LogUI
@@ -130,6 +139,7 @@ namespace Game
         }
         #endregion
         #region SceneManager
+
         /// <summary>
         /// 配置场景加载数据
         /// </summary>
@@ -154,6 +164,15 @@ namespace Game
         public void LoadScene(SceneID sceneName, Action<float> loadPorcess = null)
         {
             mSceneManager.LoadScene(sceneName.ToString(), loadPorcess);
+        }
+        /// <summary>
+        /// 场景加载
+        /// </summary>
+        /// <param name="sceneName">加载的名称</param>
+        /// <param name="loadPorcess">加载的进度</param>
+        public void LoadScene(string sceneName, Action<float> loadPorcess = null)
+        {
+            mSceneManager.LoadScene(sceneName, loadPorcess);
         }
         #endregion
         #region 原生之间调用

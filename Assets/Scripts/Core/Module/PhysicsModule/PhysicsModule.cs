@@ -17,7 +17,7 @@ namespace Game
         {
             if (camera == null)
             {
-                Log.LogError("相机不能为空");
+                LogHelper.LogError("相机不能为空");
                 return;
             }
             mCamera = camera;
@@ -30,7 +30,7 @@ namespace Game
             get {
                 if (mCamera == null)
                 {
-                    Log.LogError("请设置相机");
+                    LogHelper.LogError("请设置相机");
                     return null;
                 }
                 mRay = mCamera.ScreenPointToRay(Input.mousePosition);
@@ -50,7 +50,7 @@ namespace Game
             {
                 if (mCamera == null)
                 {
-                    Log.LogError("请设置相机");
+                    LogHelper.LogError("请设置相机");
                     return Vector3.zero;
                 }
                 mRay = mCamera.ScreenPointToRay(Input.mousePosition);
@@ -72,7 +72,7 @@ namespace Game
             {
                 if (mCamera == null)
                 {
-                    Log.LogError("请设置相机");
+                    LogHelper.LogError("请设置相机");
                     return Vector3.zero;
                 }
                 mRay = mCamera.ScreenPointToRay(Input.mousePosition);

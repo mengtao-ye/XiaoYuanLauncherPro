@@ -1,9 +1,8 @@
-﻿using UnityEngine;
-using YFramework;
+﻿using YFramework;
 
 namespace Game
 {
-    class MyResources : Resource
+    class ResourceHelper : Resource
     {
         protected override T Load<T>(string assetPath)
         {

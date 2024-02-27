@@ -11,5 +11,10 @@ namespace Game
             model = new MainModel(this, new GameObject("_Model"));
             base.Awake();
         }
+        public override void Start()
+        {
+            base.Start();
+            GameCenter.Instance.packageBridgeManaegr.ChangeScene(ABTag.Main); 
+        }
     }
 }

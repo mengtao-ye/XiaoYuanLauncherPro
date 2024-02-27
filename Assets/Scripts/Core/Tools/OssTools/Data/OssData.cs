@@ -1,67 +1,81 @@
-﻿using UnityEngine;
-using YFramework;
+﻿using System.IO;
+using UnityEngine;
 
 namespace Game
 {
     public static class OssData
     {
+        #region Local Path
         /// <summary>
         /// 获取Oss数据主资源本地目录
         /// </summary>
         /// <returns></returns>
-        public static string GetHotLocalDir()
+        public static string GetLocalHotDir(string packageName)
         {
-            return GetLocalDir() + "/HotFile";
+            return GetLocalDir(packageName) + "/HotFile";
         }
         /// <summary>
         /// 获取Oss数据主资源本地目录
         /// </summary>
         /// <returns></returns>
-        public static string GetOriginalLocalDir()
+        public static string GetLocalOriginalDir(string packageName)
         {
-            return GetLocalDir() + "/OriginalFile";
+            return GetLocalDir(packageName) + "/OriginalFile";
         }
         /// <summary>
         /// 获取热更本地目录
         /// </summary>
         /// <returns></returns>
-        public static string GetLocalDir() 
+        public static string GetLocalDir(string packageName)
         {
 #if UNITY_EDITOR
-            return Application.dataPath.Replace("Assets", "") + "AssetBundle/" + AppData.RunPlatformName ;
+            return Directory.GetParent( Application.dataPath )+ "/AssetBundle/"+ packageName+"/" + AppData.RunPlatformName;
 #else
             return Application.persistentDataPath + "/AssetBundle/" + AppData.RunPlatformName;
 #endif
-        }
+        } 
+        #endregion
+        #region Oss Path
+
         /// <summary>
         /// 获取主资源数据的版本地址
         /// </summary>
         /// <returns></returns>
-        public static string GetOriginalFilePath(string version,string fullFileName)
+        public static string GetOssOriginalFilePath(string version, string fullFileName)
         {
-            return GetOriginalDir() + $"/{version}/{fullFileName}";
+            return GetOssOriginalDir() + $"/{version}/{fullFileName}";
         }
+
         /// <summary>
         /// 获取主资源数据的版本地址
         /// </summary>
         /// <returns></returns>
-        public static string GetOriginalVersionPath()
+        public static string GetOssHotFilePath(string version, string fullFileName)
         {
-            return GetOriginalDir() + "/Version.txt";
+            return GetOssHotDir() + $"/{version}/{fullFileName}";
+        }
+
+        /// <summary>
+        /// 获取主资源数据的版本地址
+        /// </summary>
+        /// <returns></returns>
+        public static string GetOssOriginalVersionPath()
+        {
+            return GetOssOriginalDir() + "/Version.txt";
         }
         /// <summary>
         /// 获取热更数据的版本地址
         /// </summary>
         /// <returns></returns>
-        public static string GetHotVersionPath()
+        public static string GetOssHotVersionPath()
         {
-            return GetHotDir() + "/Version.txt";
+            return GetOssHotDir() + "/Version.txt";
         }
         /// <summary>
         /// 获取热更地址
         /// </summary>
         /// <returns></returns>
-        public static string GetHotDir()
+        public static string GetOssHotDir()
         {
             return GetOssDir() + "/HotFile";
         }
@@ -69,7 +83,7 @@ namespace Game
         /// 获取主资源地址
         /// </summary>
         /// <returns></returns>
-        public static string GetOriginalDir()
+        public static string GetOssOriginalDir()
         {
             return GetOssDir() + "/OriginalFile";
         }
@@ -79,7 +93,8 @@ namespace Game
         /// <returns></returns>
         public static string GetOssDir()
         {
-            return AppData.platformType.ToString() + "/MainAssets/"+AppData.RunPlatformName;
-        }
+            return AppData.platformType.ToString() + "/MainAssets/" + AppData.RunPlatformName;
+        } 
+        #endregion
     }
 }

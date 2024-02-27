@@ -37,20 +37,7 @@ namespace Game
         /// </summary>
         public static string ASSETBUNDLE_CONFIG_DATA_PATH_EDITOR = "Assets/../AssetBundle/" + EditorUserBuildSettings.activeBuildTarget.ToString() + "/Config";
 #endif
-        /// <summary>
-        /// 获取App资源目录
-        /// </summary>
-        /// <param name="appName"></param>
-        /// <returns></returns>
-        public static string GetAppPathDir(string appName)
-        {
-#if UNITY_EDITOR
-            return Application.dataPath.Replace("/Assets", "") + "/AssetBundle/" + appName + "/"+ EditorUserBuildSettings.activeBuildTarget.ToString();
-#else
-            return Application.persistentDataPath + "/AssetBundle/" + appName + "/"+ EditorUserBuildSettings.activeBuildTarget.ToString();
-#endif
-        }
-
+   
         /// <summary>
         /// 打包后读取的Asset Bundle地址
         /// </summary>

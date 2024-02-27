@@ -15,16 +15,15 @@ namespace Game
         /// 提示内容父地址
         /// </summary>
         public const string TIP_UI_PARENT_PATH = "UI/TipUI/";
-        /// <summary>
-        /// 通用提示内容地址
-        /// </summary>
-        public const string TIP_UI_COMMON_PARENT_PATH = TIP_UI_PARENT_PATH+ "CommonTipsUI/";
-
         protected override void Config()
         {
+            //Panel
             AddUI<InitPanel>(PANEL_PARENT_PATH);
-            AddUI<CommonTwoSelectTipUI>(TIP_UI_COMMON_PARENT_PATH);
-            AddUI<CommonOneSelectTipUI>(TIP_UI_COMMON_PARENT_PATH);
+
+            //TipUI
+            AddUI<CommonTwoSelectTipUI>(TIP_UI_PARENT_PATH);
+            AddUI<CommonOneSelectTipUI>(TIP_UI_PARENT_PATH);
+            AddUI<HotVersionTipUI>(TIP_UI_PARENT_PATH);
         }
         /// <summary>
         /// 注册面板
