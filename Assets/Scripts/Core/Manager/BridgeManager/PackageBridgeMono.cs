@@ -68,5 +68,22 @@ namespace Game
             mPackageBridgeManager.StartChangeScene(splits[0]);
             GameCenter.Instance.LoadScene(splits[1]);
         }
+        public void GetPinYin(string data)
+        {
+            if (data == null)
+            {
+                LogHelper.LogError("GetPinYin 数据为空!");
+                return;
+            }
+            string[] splits = data.Split("&");
+            if (splits.Length != 2)
+            {
+                LogHelper.LogError("GetPinYin 数据格式错误!");
+                return;
+            }
+            char targetChar = splits[1][0];
+            char pinyin = PinYinTools.GetHanZiFirstCode(targetChar);
+            mPackageBridgeManager.GetPinYin(splits[0], targetChar, pinyin);
+        }
     }
 }

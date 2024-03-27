@@ -143,6 +143,7 @@
     <Compile Include="Assets\Scripts\YFramework\Core\Module\LogModule\LogHelper.cs" />
     <Compile Include="Assets\Scripts\YFramework\Core\MVC\Controller\ChildController\BaseChildController.cs" />
     <Compile Include="Assets\Scripts\YFramework\Core\Manager\SocketManager\Udp\BigData\UdpBigData.cs" />
+    <Compile Include="Assets\Scripts\YFramework\Core\Module\ResourceModule\ResourceHelper.cs" />
     <Compile Include="Assets\Scripts\YFramework\Core\DataStructure\MultiTree\MultiTreeNode.cs" />
     <Compile Include="Assets\Scripts\Core\Module\HotFixModule\Data\HotFixData.cs" />
     <Compile Include="Assets\Scripts\YFramework\Core\Module\DataModule\List\ListModule.cs" />
@@ -184,6 +185,7 @@
     <Compile Include="Assets\Scripts\YFramework\Core\Module\FSM\State\BaseFSMState.cs" />
     <Compile Include="Assets\Scripts\YFramework\Core\Module\BoardCastModule\BoardCastModule.cs" />
     <Compile Include="Assets\Scripts\Core\Tools\BatTools\EdtUtil.cs" />
+    <Compile Include="Assets\Scripts\Core\Tools\PinYinTools\PinYinTools.cs" />
     <Compile Include="Assets\Scripts\YFramework\Core\Main\Center.cs" />
     <Compile Include="Assets\Scripts\Core\Manager\LiveManager\Main\LiveManager.cs" />
     <Compile Include="Assets\Scripts\YFramework\Core\Utility\Utlilty.Algorithm.cs" />
@@ -391,9 +393,9 @@
     <Compile Include="Assets\Scripts\Core\Data\Data\SocketData\IPAddressConstData.cs" />
     <Compile Include="Assets\Scripts\YFramework\Core\Extend\ToggleGroupExtend.cs" />
     <Compile Include="Assets\Scripts\YFramework\Core\Module\ToTween\Base\FatherBase\IToTween.cs" />
-    <Compile Include="Assets\Scripts\YFramework\Core\Module\ResourceModule\ResourceHelper.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\Plugin\PinYin\NPinYin.dll" />
     <None Include="Assets\Plugin\Aliyun\Aliyun.OSS.dll" />
   </ItemGroup>
   <ItemGroup>
@@ -639,6 +641,9 @@
     </Reference>
     <Reference Include="Aliyun.OSS">
       <HintPath>Assets\Plugin\Aliyun\Aliyun.OSS.dll</HintPath>
+    </Reference>
+    <Reference Include="NPinYin">
+      <HintPath>Assets\Plugin\PinYin\NPinYin.dll</HintPath>
     </Reference>
     <Reference Include="dnlib">
       <HintPath>Library\PackageCache\com.code-philosophy.hybridclr@410bb9b542\Plugins\dnlib.dll</HintPath>

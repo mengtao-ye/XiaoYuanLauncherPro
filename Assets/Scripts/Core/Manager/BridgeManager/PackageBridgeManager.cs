@@ -91,6 +91,20 @@ namespace Game
             gameObject.SendMessage("ChangeScene", GameCenter.Instance.curScene.sceneName, SendMessageOptions.DontRequireReceiver);
             StartGame(tagName);
         }
-
+        /// <summary>
+        /// 场景切换完成
+        /// </summary>
+        /// <param name="tagName"></param>
+        public void GetPinYin(string tagName,char target,char pinyin )
+        {
+            GameObject gameObject = Get(tagName);
+            if (gameObject == null)
+            {
+                LogHelper.LogError("GetPinYin TagName:" + tagName + "未找到对应的桥接对象");
+                return;
+            }
+            gameObject.SendMessage("ReceivePinYin", new char[] { target,pinyin  }, SendMessageOptions.DontRequireReceiver);
+            StartGame(tagName);
+        }
     }
 }

@@ -55,7 +55,6 @@ namespace Game
             TotweenModule.Init();
             LogHelper.Instance = new UnityLogHelper();
             ResourceHelper.Instance = new ResourcesLoadHelper();
-
         }
         private void Awake()
         {
