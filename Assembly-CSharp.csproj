@@ -78,7 +78,6 @@
     <Compile Include="Assets\Scripts\Core\Controller\Init\ChildController\Process\LoadHotVersionProcess.cs" />
     <Compile Include="Assets\Scripts\Core\Model\MainModel\MainModel.cs" />
     <Compile Include="Assets\Scripts\YFramework\Core\Utility\Utility.MicroPhoneTools.cs" />
-    <Compile Include="Assets\Scripts\YFramework\Core\Module\ToTween\Base\FatherBase\BaseToTween.cs" />
     <Compile Include="Assets\Scripts\YFramework\Core\UI\Log\LogUI\ILogUI.cs" />
     <Compile Include="Assets\Scripts\YFramework\Core\Data\Const\BytesConst.cs" />
     <Compile Include="Assets\Scripts\YFramework\Core\Module\DataModule\Dictionary\DictionaryPoolModule.cs" />
@@ -171,6 +170,7 @@
     <Compile Include="Assets\Scripts\Core\UI\Canvas\Core\InitCanvas.cs" />
     <Compile Include="Assets\Scripts\YFramework\Core\Module\ToTween\Extend\Transform\LocalEuler\ToTweenExtend.cs" />
     <Compile Include="Assets\Scripts\Core\UI\Custom\BaseCustomPanel.cs" />
+    <Compile Include="Assets\Scripts\YFramework\Core\Module\ToTween\Entity\AnchorPosition\ToAnchorPositionTween.cs" />
     <Compile Include="Assets\Scripts\Core\Module\AssetBundleModule\AssetBundleData\AssetBundleConfigData.cs" />
     <Compile Include="Assets\Scripts\Core\Extend\StringExtend.cs" />
     <Compile Include="Assets\Scripts\YFramework\Core\Module\ToTween\Extend\Transform\Position\ToTweenExtend.cs" />
@@ -183,6 +183,7 @@
     <Compile Include="Assets\Scripts\Core\Data\Data\SystemData\SystemInfo.cs" />
     <Compile Include="Assets\Scripts\Core\Manager\LiveManager\Main\ILiveManager.cs" />
     <Compile Include="Assets\Scripts\YFramework\Core\Module\FSM\State\BaseFSMState.cs" />
+    <Compile Include="Assets\Scripts\YFramework\Core\Module\ToTween\Extend\Transform\AnchorPosition\ToTweenExtend.cs" />
     <Compile Include="Assets\Scripts\YFramework\Core\Module\BoardCastModule\BoardCastModule.cs" />
     <Compile Include="Assets\Scripts\Core\Tools\BatTools\EdtUtil.cs" />
     <Compile Include="Assets\Scripts\Core\Tools\PinYinTools\PinYinTools.cs" />
@@ -205,6 +206,7 @@
     <Compile Include="Assets\Scripts\YFramework\Core\Module\ECSModule\System\IECSSystem.cs" />
     <Compile Include="Assets\Scripts\YFramework\Core\Manager\SocketManager\Udp\UdpRequestHandleManager.cs" />
     <Compile Include="Assets\Scripts\YFramework\Core\Extend\StringExtend.cs" />
+    <Compile Include="Assets\Scripts\YFramework\Core\Module\ToTween\Base\FatherBase\Abstractor\BaseTransformToTween.cs" />
     <Compile Include="Assets\Scripts\Core\Scene\SceneID.cs" />
     <Compile Include="Assets\Scripts\Core\Controller\Init\ChildController\Process\LoadHotFileProcess.cs" />
     <Compile Include="Assets\Scripts\YFramework\Core\Module\PoolModule\ClassPoolModule\PoolData\Dictionary\Entity\DictionaryData.cs" />
@@ -214,6 +216,7 @@
     <Compile Include="Assets\Scripts\Core\Tools\OssTools\Data\OssConfig.cs" />
     <Compile Include="Assets\Scripts\Core\Module\AssetBundleModule\AssetBundleData\AssetBundlePathData.cs" />
     <Compile Include="Assets\Scripts\YFramework\Core\Manager\SocketManager\Udp\IUdpRequestHandle.cs" />
+    <Compile Include="Assets\Scripts\YFramework\Core\Module\ToTween\Base\FatherBase\Abstractor\BaseRectTransformToTween.cs" />
     <Compile Include="Assets\Scripts\YFramework\Core\DesignPattern\SinglePattern\Singleton.cs" />
     <Compile Include="Assets\Scripts\YFramework\Core\Utility\Utility.CRC32Tool.cs" />
     <Compile Include="Assets\Scripts\YFramework\Core\Module\ECSModule\Entity\BaseECSEntity.cs" />
@@ -221,6 +224,7 @@
     <Compile Include="Assets\Scripts\YFramework\Core\Utility\Utility.ByteTools.cs" />
     <Compile Include="Assets\Scripts\YFramework\Core\Module\LockStepModule\FixedData\Fix64\FixVector2.cs" />
     <Compile Include="Assets\Scripts\YFramework\Core\Manager\SceneManager\IScene.cs" />
+    <Compile Include="Assets\Scripts\YFramework\Core\Common\Interface\Operator\IRefresh.cs" />
     <Compile Include="Assets\Scripts\Core\Manager\LiveManager\Live\Core\UpdateLive.cs" />
     <Compile Include="Assets\Scripts\YFramework\Core\Module\ToTween\Entity\Rotation\Rotation\ToLocalQuaternionTween.cs" />
     <Compile Include="Assets\Scripts\Core\Scene\Scene\MainScene.cs" />
@@ -285,9 +289,11 @@
     <Compile Include="Assets\Scripts\Core\Bridge\BridgeManager.cs" />
     <Compile Include="Assets\Scripts\YFramework\Core\Utility\Utility.MD5Tool.cs" />
     <Compile Include="Assets\Scripts\YFramework\Core\Utility\Utility.PermissionTools.cs" />
+    <Compile Include="Assets\Scripts\YFramework\Core\Module\ToTween\Base\FatherBase\Interface\IToTween.cs" />
     <Compile Include="Assets\Scripts\YFramework\Core\Common\Interface\Operator\IClear.cs" />
     <Compile Include="Assets\Scripts\YFramework\Core\Data\UIData\UIMappperData\UIMapperData.cs" />
     <Compile Include="Assets\Scripts\Core\Data\Data\AppData\AppConstData.cs" />
+    <Compile Include="Assets\Scripts\YFramework\Core\Extend\ListDataExtend.cs" />
     <Compile Include="Assets\Scripts\YFramework\Core\Module\ToTween\Extend\Transform\Euler\ToTweenExtend.cs" />
     <Compile Include="Assets\Scripts\Core\UI\Custom\BaseCustomTipsUI.cs" />
     <Compile Include="Assets\Scripts\Core\Module\HttpModule\HttpModule.cs" />
@@ -309,6 +315,7 @@
     <Compile Include="Assets\Scripts\Core\UI\Custom\BaseCustomCanvas.cs" />
     <Compile Include="Assets\Scripts\Core\Module\HotFixModule\HotFixModule.cs" />
     <Compile Include="Assets\Scripts\Core\Controller\Init\InitController.cs" />
+    <Compile Include="Assets\Scripts\YFramework\Core\Module\ToTween\Base\FatherBase\Interface\IRectTransformToTween.cs" />
     <Compile Include="Assets\Scripts\YFramework\Core\Module\LockStepModule\FixedData\Fix32\Fix32Vector3.cs" />
     <Compile Include="Assets\Scripts\YFramework\Core\Utility\Utility.XmlMapper.cs" />
     <Compile Include="Assets\Scripts\YFramework\Core\UI\TipsUI\Manager\TipsUIManager.cs" />
@@ -335,6 +342,7 @@
     <Compile Include="Assets\Scripts\YFramework\Core\AI\Path\Manager\CalcPathManager.cs" />
     <Compile Include="Assets\Scripts\YFramework\Core\UI\Log\LogUI\BaseLogUI.cs" />
     <Compile Include="Assets\Scripts\YFramework\Core\Module\ToTween\Data\CurveType.cs" />
+    <Compile Include="Assets\HybridCLRGenerate\AOTGenericReferences.cs" />
     <Compile Include="Assets\Scripts\Core\Module\PhysicsModule\PhysicsData.cs" />
     <Compile Include="Assets\Scripts\Core\Data\Mapper\UIMapper.cs" />
     <Compile Include="Assets\Scripts\Core\Main\GameCenter.cs" />
@@ -362,6 +370,7 @@
     <Compile Include="Assets\Scripts\Core\Controller\Custom\BaseCustomChildController.cs" />
     <Compile Include="Assets\Scripts\YFramework\Core\Extend\RectTransformExtend.cs" />
     <Compile Include="Assets\Scripts\YFramework\Core\Manager\SocketManager\Tcp\Message.cs" />
+    <Compile Include="Assets\Scripts\YFramework\Core\Module\ToTween\Base\FatherBase\Interface\ITransformToTween.cs" />
     <Compile Include="Assets\Scripts\YFramework\Core\UI\Base\IUI.cs" />
     <Compile Include="Assets\Scripts\YFramework\Core\Common\Abstractor\Map\SingleMap.cs" />
     <Compile Include="Assets\Scripts\YFramework\Core\UI\Log\LogUIManager\ILogUIManager.cs" />
@@ -392,11 +401,9 @@
     <Compile Include="Assets\Scripts\Core\Module\ReflectionDataModule\UserData\UserDataModule.cs" />
     <Compile Include="Assets\Scripts\Core\Data\Data\SocketData\IPAddressConstData.cs" />
     <Compile Include="Assets\Scripts\YFramework\Core\Extend\ToggleGroupExtend.cs" />
-    <Compile Include="Assets\Scripts\YFramework\Core\Module\ToTween\Base\FatherBase\IToTween.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Assets\Plugin\PinYin\NPinYin.dll" />
-    <None Include="Assets\Plugin\Aliyun\Aliyun.OSS.dll" />
+    <None Include="Assets\HybridCLRGenerate\link.xml" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
@@ -640,10 +647,10 @@
       <HintPath>C:\Unity\2021.3.21f1c1\Editor\Data\Managed\UnityEngine\UnityEditor.UnityConnectModule.dll</HintPath>
     </Reference>
     <Reference Include="Aliyun.OSS">
-      <HintPath>Assets\Plugin\Aliyun\Aliyun.OSS.dll</HintPath>
+      <HintPath>Assets\Plugins\Aliyun\Aliyun.OSS.dll</HintPath>
     </Reference>
     <Reference Include="NPinYin">
-      <HintPath>Assets\Plugin\PinYin\NPinYin.dll</HintPath>
+      <HintPath>Assets\Plugins\PinYin\NPinYin.dll</HintPath>
     </Reference>
     <Reference Include="dnlib">
       <HintPath>Library\PackageCache\com.code-philosophy.hybridclr@410bb9b542\Plugins\dnlib.dll</HintPath>

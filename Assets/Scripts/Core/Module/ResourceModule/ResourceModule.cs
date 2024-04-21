@@ -55,7 +55,7 @@ namespace Game
         /// <typeparam name="T">加载的资源类型</typeparam>
         /// <param name="path">加载的资源地址</param>
         /// <param name="Complete">加载完成后执行的回调</param>
-        public static void LoadAsync<T>(string path,Action<T> Complete) where T : UnityEngine.Object
+        public static void LoadAsync<T>(string tag,string path,Action<T> Complete) where T : UnityEngine.Object
         {
             if (string.IsNullOrEmpty(path)) return;
 #if !UNITY_EDITOR
@@ -64,7 +64,7 @@ namespace Game
             ResourceItem resource = null;
             if (!mResourceItemDict.ContainsKey(crc))
             {
-                resource = AssetBundleModule.LoadResourceItem(crc);
+                resource = AssetBundleModule.Get(tag).LoadResourceItem(crc);
                 resource.AsyncLoad = true;
                 resource.Finish = (obj) =>
                 {

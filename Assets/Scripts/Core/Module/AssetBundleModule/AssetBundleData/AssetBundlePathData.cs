@@ -45,7 +45,7 @@ namespace Game
 #if UNITY_EDITOR
         ASSETBUNDLE_PATH_EDITOR;
 #elif UNITY_ANDROID
-                Application.persistentDataPath + "/AssetBundle/"+AppConstData.RunPlatformName ;
+                Application.persistentDataPath + "/AssetBundle/"+AppData.RunPlatformName ;
 #endif
     }
 }
