@@ -9,6 +9,7 @@ namespace Game
             AddScene(new InitScene());
             AddScene(new LoginScene());
             AddScene(new MainScene());
+            AddScene(new MetaSchoolScene());
         }
         /// <summary>
         /// 注册场景

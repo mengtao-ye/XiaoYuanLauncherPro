@@ -42,12 +42,18 @@ namespace Game
             {
                 ABBase abBase = config.ABList[i];
                 ResourceItem resourceItem = new ResourceItem(name);
-
                 resourceItem.ABName = abBase.ABName;
                 resourceItem.AssetName = abBase.AssetName;
                 resourceItem.CRC = abBase.CRC;
                 resourceItem.Dependence = abBase.Dependence;
-                mABResourceDict.Add(resourceItem.CRC, resourceItem);
+                if (mABResourceDict.ContainsKey(resourceItem.CRC))
+                {
+                    Debug.Log("AB包重名：" + resourceItem.ABName);
+                }
+                else {
+                    mABResourceDict.Add(resourceItem.CRC, resourceItem);
+                }
+            
             }
         }
         /// <summary>
@@ -120,7 +126,7 @@ namespace Game
                 assetBundleItem = ClassPool<AssetBundleItem>.Pop();
                 assetBundleItem.SetManagerName(packageName);
                 byte[] bytes = File.ReadAllBytes(path);
-                EncryptionTools.Decryption(bytes);
+               
                 AssetBundle assetBundle = AssetBundle.LoadFromMemory(bytes);
                 assetBundleItem.assetBundle = assetBundle;
                 assetBundleItem.CRC = crc;

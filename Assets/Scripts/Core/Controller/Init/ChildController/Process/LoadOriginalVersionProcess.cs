@@ -24,7 +24,7 @@ namespace Game
             string ossVersionPath = OssData.GetOssOriginalVersionPath();
             mController.initPanel.SetContent("加载主数据版本");
             mController.initPanel.SetProcess(0);
-            AliyunOSSTools.Instance.LoadOssString(ossVersionPath, LoadProcess, LoadSuccess, LoadVersionFail);
+            HttpTools.GetText(ossVersionPath,  LoadSuccess, LoadVersionFail);
         }
         /// <summary>
         /// 版本文件下载失败回调
@@ -52,16 +52,14 @@ namespace Game
         {
             AppTools.QuitApp();
         }
-        private void LoadProcess(float process)
-        {
-
-        }
+       
         private void LoadSuccess(string version)
         {
             if (version.IsNullOrEmpty())
             {
                 LogHelper.LogError("版本数据加载失败");
-                AppTools.ShowTipsUI<CommonTwoSelectTipUI>((ui => {
+                AppTools.ShowTipsUI<CommonTwoSelectTipUI>((ui => 
+                {
                     ui.ShowContent("版本数据下载失败，是否重试？", "资源下载失败", "退出", "重试", LoadVersionSureCallBack, LoadCancelCallBack);
                 }));
                 return;

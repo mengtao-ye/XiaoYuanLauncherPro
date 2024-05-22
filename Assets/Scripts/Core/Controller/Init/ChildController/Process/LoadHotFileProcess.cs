@@ -48,12 +48,12 @@ namespace Game
                     //如果版本没有这个文件的话就下载
                     mController.initPanel.SetContent("加载热更资源数据：" + fileName);
                     string ossPath = OssData.GetOssHotFilePath(mManager.condition.hotVersion, fileName);
-                    AliyunOSSTools.Instance.LoadOssFileToLocal(ossPath, OssData.GetLocalHotDir(ABTag.Main) + "/" + fileName, LoadProcess, LoadHotSuccessCallback, LoadHotFileFailCallback);
+                    YFramework.Utility.HttpTools .GetBytesToLocal(ossPath, OssData.GetLocalHotDir(ABTag.Main) + "/" + fileName, LoadHotFileFailCallback,LoadHotSuccessCallback);
                 }
                 else
                 {
                     //已经有这个文件的话
-                    long size = new System.IO.FileInfo(localPath).Length;
+                    int size =(int) new System.IO.FileInfo(localPath).Length;
                     LoadHotSuccessCallback(size);
                 }
             }
@@ -75,17 +75,14 @@ namespace Game
         /// 加载热更资源成功
         /// </summary>
         /// <param name="size"></param>
-        private void LoadHotSuccessCallback(long size)
+        private void LoadHotSuccessCallback(int size)
         {
             mCurIndex++;
             LoadHotFile();
             mCurDownLoadSize += size;
             mController.initPanel.SetProcess(mCurDownLoadSize / mManager.condition.hotConfig.size);
         }
-        private void LoadProcess(float process)
-        {
-
-        }
+       
         /// <summary>
         /// 版本文件下载失败回调
         /// </summary>

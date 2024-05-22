@@ -29,7 +29,7 @@ namespace Game
         public static string GetLocalDir(string packageName)
         {
 #if UNITY_EDITOR
-            return Directory.GetParent( Application.dataPath )+ "/AssetBundle/"+ packageName+"/" + AppData.RunPlatformName;
+            return PathData.ProjectDir + "/AssetBundle/"+ packageName+"/" + AppData.RunPlatformName;
 #else
             return Application.persistentDataPath + "/AssetBundle/" + AppData.RunPlatformName;
 #endif
@@ -93,7 +93,8 @@ namespace Game
         /// <returns></returns>
         public static string GetOssDir()
         {
-            return AppData.platformType.ToString() + "/MainAssets/" + AppData.RunPlatformName;
+           
+            return @"http://xiaoyuanapp-oss.oss-cn-hangzhou.aliyuncs.com/" + AppData.platformType.ToString() + "/MainAssets/" + AppData.RunPlatformName;
         } 
         #endregion
     }

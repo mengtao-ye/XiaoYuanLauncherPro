@@ -29,7 +29,6 @@ namespace Game
         }
         private Assembly EditorLoadHotUpdateDllAssembly(string dllName,byte[] data)
         {
-            AOTMetaAssemblyNames.Add(dllName);
             AssetBundle ab = AssetBundle.LoadFromMemory(data);
             foreach (var aotDllName in AOTMetaAssemblyNames)
             {
@@ -45,7 +44,12 @@ namespace Game
                 LoadImageErrorCode err = RuntimeApi.LoadMetadataForAOTAssembly(dllBytes, mode);
                 Debug.Log($"LoadMetadataForAOTAssembly:{aotDllName}. mode:{mode} ret:{err}");
             }
-            return Assembly.Load(mAssetBytesDataDict[dllName]);
+            Assembly assembly = Assembly.Load(ab.LoadAsset<TextAsset>(dllName).bytes);
+            Debug.Log("dllName:"+ dllName+ ",assembly.FullName:"+ assembly.FullName);
+            Type type = assembly.GetType("Game.UniqueCodeGenerator");
+            MethodInfo method = type.GetMethod("GenerateUniqueCode");
+             Debug.Log( method.Invoke(null,null));
+            return assembly;
         }
     }
 }

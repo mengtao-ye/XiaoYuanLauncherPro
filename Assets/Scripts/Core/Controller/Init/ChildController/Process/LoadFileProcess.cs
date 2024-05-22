@@ -49,7 +49,7 @@ namespace Game
                         //如果版本没有这个文件的话就下载
                         mController.initPanel.SetContent("加载主资源数据：" + fileName);
                         string ossPath = OssData.GetOssOriginalFilePath(mManager.condition.version, fileName);
-                        AliyunOSSTools.Instance.LoadOssFileToLocal(ossPath, OssData.GetLocalOriginalDir(ABTag.Main) + "/" + fileName, LoadProcess, LoadOriginalSuccessCallback, LoadOriginalFileFailCallback);
+                        YFramework.Utility.HttpTools.GetBytesToLocal  (ossPath, OssData.GetLocalOriginalDir(ABTag.Main) + "/" + fileName,  LoadOriginalFileFailCallback, LoadOriginalSuccessCallback);
                     }
                     else
                     {
@@ -59,7 +59,7 @@ namespace Game
                             File.Delete(localPath);
                         }
                         //已经有这个文件的话
-                        long size = new System.IO.FileInfo(localPath).Length;
+                        int size =  (int)new System.IO.FileInfo(localPath).Length;
                         LoadOriginalSuccessCallback(size);
                     }
                 }
@@ -82,7 +82,7 @@ namespace Game
         /// 加载主资源成功
         /// </summary>
         /// <param name="size"></param>
-        private void LoadOriginalSuccessCallback(long size)
+        private void LoadOriginalSuccessCallback(int size)
         {
             mCurIndex++;
             LoadOriginalFile();
@@ -96,10 +96,6 @@ namespace Game
         {
             AppTools.QuitApp();
         }
-        private void LoadProcess(float process)
-        {
-
-        }
-
+     
     }
 }

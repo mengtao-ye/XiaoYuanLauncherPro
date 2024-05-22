@@ -43,9 +43,12 @@ namespace Game
         /// </summary>
         private void LoadLauncherBridge()
         {
+            Debug.Log("LoadLauncherBridge");
             GameObject mainBridge = ResourceModule.Load<GameObject>("LauncherBridge", ABTag.Main).InstantiateGameObject();
+            Debug.Log("mainBridgeName:"+mainBridge.name.IsNullOrEmpty());
             mainBridge.DontDestroyOnLoad();
             GameCenter.Instance.packageBridgeManaegr.Add(new BridgeData() {  tagName = ABTag.Main, target  = mainBridge });
+            Debug.Log("GameCenter.Instance.packageBridgeManaegr.bridgeGo:" + GameCenter.Instance.packageBridgeManaegr.bridgeGo);
             mainBridge.SendMessage("Init", GameCenter.Instance.packageBridgeManaegr.bridgeGo, SendMessageOptions.DontRequireReceiver);
         }
 

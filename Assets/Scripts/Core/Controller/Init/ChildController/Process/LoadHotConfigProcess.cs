@@ -38,7 +38,7 @@ namespace Game
             mController.initPanel.SetContent("加载热更数据配置表");
             string version = (processManager as ProcessManager<LoadOssCondition>).condition.hotVersion;
             string configPath = OssData.GetOssHotFilePath(version, "HotABFileConfig.bytes");
-            AliyunOSSTools.Instance.LoadOssBytes(configPath, LoadProcess, LoadConfigSuccessCallback, LoadConfigFailCallback);
+            HttpTools.GetBytes(configPath,null,LoadConfigSuccessCallback, LoadConfigFailCallback);
         }
         /// <summary>
         /// 版本文件下载失败回调
@@ -64,10 +64,6 @@ namespace Game
             DoNext();
         }
 
-        private void LoadProcess(float process)
-        {
-
-        }
         /// <summary>
         /// 版本文件下载失败回调
         /// </summary>

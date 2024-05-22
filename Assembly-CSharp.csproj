@@ -70,6 +70,7 @@
     <Compile Include="Assets\Scripts\Core\Mono\UI\Image\SimpleRoundedImage.cs" />
     <Compile Include="Assets\Scripts\Core\Tools\BuildTools\BuildEditor\BuildEditor.cs" />
     <Compile Include="Assets\Scripts\YFramework\Core\Module\ProcessModule\Process\IProcess.cs" />
+    <Compile Include="Assets\Scripts\Core\UI\Canvas\Core\MetaSchoolCanvas.cs" />
     <Compile Include="Assets\Scripts\YFramework\Core\Mono\UI\ScrollView\FlashScrollView.cs" />
     <Compile Include="Assets\Scripts\YFramework\Core\Module\UndoModule\UndoModule.cs" />
     <Compile Include="Assets\Scripts\YFramework\Core\Common\Interface\Converter\IDataConverter.cs" />
@@ -99,6 +100,7 @@
     <Compile Include="Assets\Scripts\Core\Module\AssetBundleModule\AssetBundleModule.cs" />
     <Compile Include="Assets\Scripts\YFramework\Core\Manager\SocketManager\Tcp\RequestHandle\BaseTcpRequestHandle.cs" />
     <Compile Include="Assets\Scripts\YFramework\Core\UI\Form\IForm.cs" />
+    <Compile Include="Assets\Scripts\Core\Scene\Scene\MetaSchoolScene.cs" />
     <Compile Include="Assets\Scripts\Core\Scene\Scene\LoginScene.cs" />
     <Compile Include="Assets\Scripts\Core\Tools\ConverterTools\ConverterTools.cs" />
     <Compile Include="Assets\Scripts\YFramework\Core\UI\Panel\IPanel.cs" />
@@ -139,10 +141,10 @@
     <Compile Include="Assets\Scripts\YFramework\Core\Extend\DateTimeExtend.cs" />
     <Compile Include="Assets\Scripts\Core\Model\InitModel\InitModel.cs" />
     <Compile Include="Assets\Scripts\YFramework\Core\DesignPattern\ObserverPattern\Observer\BaseObserver.cs" />
-    <Compile Include="Assets\Scripts\YFramework\Core\Module\LogModule\LogHelper.cs" />
     <Compile Include="Assets\Scripts\YFramework\Core\MVC\Controller\ChildController\BaseChildController.cs" />
     <Compile Include="Assets\Scripts\YFramework\Core\Manager\SocketManager\Udp\BigData\UdpBigData.cs" />
     <Compile Include="Assets\Scripts\YFramework\Core\Module\ResourceModule\ResourceHelper.cs" />
+    <Compile Include="Assets\Scripts\YFramework\Core\Module\LogModule\LogHelper.cs" />
     <Compile Include="Assets\Scripts\YFramework\Core\DataStructure\MultiTree\MultiTreeNode.cs" />
     <Compile Include="Assets\Scripts\Core\Module\HotFixModule\Data\HotFixData.cs" />
     <Compile Include="Assets\Scripts\YFramework\Core\Module\DataModule\List\ListModule.cs" />
@@ -170,6 +172,7 @@
     <Compile Include="Assets\Scripts\Core\UI\Canvas\Core\InitCanvas.cs" />
     <Compile Include="Assets\Scripts\YFramework\Core\Module\ToTween\Extend\Transform\LocalEuler\ToTweenExtend.cs" />
     <Compile Include="Assets\Scripts\Core\UI\Custom\BaseCustomPanel.cs" />
+    <Compile Include="Assets\Scripts\YFramework\Core\Utility\Utility.UnityTools.cs" />
     <Compile Include="Assets\Scripts\YFramework\Core\Module\ToTween\Entity\AnchorPosition\ToAnchorPositionTween.cs" />
     <Compile Include="Assets\Scripts\Core\Module\AssetBundleModule\AssetBundleData\AssetBundleConfigData.cs" />
     <Compile Include="Assets\Scripts\Core\Extend\StringExtend.cs" />
@@ -180,6 +183,7 @@
     <Compile Include="Assets\Scripts\Core\UI\Canvas\Core\MainCanvas.cs" />
     <Compile Include="Assets\Scripts\YFramework\Core\Common\Interface\Life\ILife.cs" />
     <Compile Include="Assets\Scripts\YFramework\Core\Manager\SocketManager\Data\CommonData.cs" />
+    <Compile Include="Assets\Scripts\Core\Model\MetaSchool\MetaSchoolModel.cs" />
     <Compile Include="Assets\Scripts\Core\Data\Data\SystemData\SystemInfo.cs" />
     <Compile Include="Assets\Scripts\Core\Manager\LiveManager\Main\ILiveManager.cs" />
     <Compile Include="Assets\Scripts\YFramework\Core\Module\FSM\State\BaseFSMState.cs" />
@@ -213,7 +217,6 @@
     <Compile Include="Assets\Scripts\Core\Tools\AppTools\System\AppTools.cs" />
     <Compile Include="Assets\Scripts\YFramework\Core\Utility\Utility.DictionaryTools.cs" />
     <Compile Include="Assets\Scripts\YFramework\Core\Module\PoolModule\ClassPoolModule\PoolData\List\Base\BaseListData.cs" />
-    <Compile Include="Assets\Scripts\Core\Tools\OssTools\Data\OssConfig.cs" />
     <Compile Include="Assets\Scripts\Core\Module\AssetBundleModule\AssetBundleData\AssetBundlePathData.cs" />
     <Compile Include="Assets\Scripts\YFramework\Core\Manager\SocketManager\Udp\IUdpRequestHandle.cs" />
     <Compile Include="Assets\Scripts\YFramework\Core\Module\ToTween\Base\FatherBase\Abstractor\BaseRectTransformToTween.cs" />
@@ -257,15 +260,15 @@
     <Compile Include="Assets\Scripts\YFramework\Core\Manager\SocketManager\Udp\BigData\UdpMsg.cs" />
     <Compile Include="Assets\Scripts\YFramework\Core\Extend\ObjectExtend.cs" />
     <Compile Include="Assets\Scripts\YFramework\Core\Module\ECSModule\Component\IECSComponent.cs" />
-    <Compile Include="Assets\Scripts\YFramework\Core\Utility\Utility.VersionTools.cs" />
     <Compile Include="Assets\Scripts\YFramework\Core\Module\ProcessModule\ProcessManager\Base\BaseProcessManager.cs" />
+    <Compile Include="Assets\Scripts\YFramework\Core\Utility\Utility.VersionTools.cs" />
     <Compile Include="Assets\Scripts\YFramework\Core\Module\LockStepModule\Data\LockStepData.cs" />
     <Compile Include="Assets\Scripts\Core\UI\Canvas\Core\LoginCanvas.cs" />
     <Compile Include="Assets\Scripts\Core\Model\Common\Child\TwoDCameraChildModel.cs" />
     <Compile Include="Assets\Scripts\YFramework\Core\Common\Abstractor\Count\BaseCount.cs" />
     <Compile Include="Assets\Scripts\Core\Data\Data\LayerData\LayerMaskData.cs" />
-    <Compile Include="Assets\Scripts\YFramework\Core\Manager\SocketManager\Tcp\RequestHandle\SocketMsg.cs" />
     <Compile Include="Assets\Scripts\YFramework\Core\Module\ProcessModule\ProcessManager\T\ProcessManager.cs" />
+    <Compile Include="Assets\Scripts\YFramework\Core\Manager\SocketManager\Tcp\RequestHandle\SocketMsg.cs" />
     <Compile Include="Assets\Scripts\Core\Data\Data\SocketData\SocketVarData.cs" />
     <Compile Include="Assets\Scripts\YFramework\Core\MVC\Model\ChildModel\IChildModel.cs" />
     <Compile Include="Assets\Scripts\Core\Module\HotFixModule\HotFixEditor\HotFixEditor.cs" />
@@ -280,12 +283,12 @@
     <Compile Include="Assets\Scripts\YFramework\Core\Module\UndoModule\IUnDo.cs" />
     <Compile Include="Assets\Scripts\YFramework\Core\Module\ECSModule\Component\BaseECSComponent.cs" />
     <Compile Include="Assets\Scripts\Core\UI\TipsUI\HotVersionTipUI.cs" />
-    <Compile Include="Assets\Scripts\YFramework\Core\Utility\Utility.ListTools.cs" />
     <Compile Include="Assets\Scripts\YFramework\Core\Manager\SocketManager\Udp\BigData\SocketData.cs" />
-    <Compile Include="Assets\Scripts\YFramework\Core\Main\Module\IModule.cs" />
     <Compile Include="Assets\Scripts\YFramework\Core\UI\Base\BaseUI.cs" />
+    <Compile Include="Assets\Scripts\YFramework\Core\Main\Module\IModule.cs" />
     <Compile Include="Assets\Scripts\Core\Module\AssetBundleModule\AssetBundleData\AssetBundleConstName.cs" />
     <Compile Include="Assets\Scripts\YFramework\Core\Module\PoolModule\ClassPoolModule\PoolData\Dictionary\Base\IDictionaryData.cs" />
+    <Compile Include="Assets\Scripts\YFramework\Core\Utility\Utility.ListTools.cs" />
     <Compile Include="Assets\Scripts\Core\Bridge\BridgeManager.cs" />
     <Compile Include="Assets\Scripts\YFramework\Core\Utility\Utility.MD5Tool.cs" />
     <Compile Include="Assets\Scripts\YFramework\Core\Utility\Utility.PermissionTools.cs" />
@@ -363,8 +366,8 @@
     <Compile Include="Assets\Scripts\YFramework\Core\Module\ProcessModule\ProcessManager\Normal\ProcessManager.cs" />
     <Compile Include="Assets\Scripts\Core\Pool\Data\PoolID.cs" />
     <Compile Include="Assets\Scripts\Core\Manager\HttpManager\Main\HttpManager.cs" />
-    <Compile Include="Assets\Scripts\Core\Module\ReflectionDataModule\UserData\Data\CallBackData\Core\UserDataMap.cs" />
     <Compile Include="Assets\Scripts\Core\Module\ReflectionDataModule\UserData\Data\CallBackData\Base\BaseUnityUserDataCallBack.cs" />
+    <Compile Include="Assets\Scripts\Core\Module\ReflectionDataModule\UserData\Data\CallBackData\Core\UserDataMap.cs" />
     <Compile Include="Assets\Scripts\YFramework\Core\Module\ToTween\Entity\Position\ToPositionTween.cs" />
     <Compile Include="Assets\Scripts\YFramework\Core\UI\Log\LogUIManager\LogUIManager.cs" />
     <Compile Include="Assets\Scripts\Core\Controller\Custom\BaseCustomChildController.cs" />
@@ -383,8 +386,8 @@
     <Compile Include="Assets\Scripts\YFramework\Core\Module\ToTween\Entity\Rotation\Euler\ToEulerTween.cs" />
     <Compile Include="Assets\Scripts\YFramework\Core\Common\Interface\Life\Core\IUpdate.cs" />
     <Compile Include="Assets\Scripts\YFramework\Core\Common\Interface\Life\Core\IStart.cs" />
-    <Compile Include="Assets\Scripts\YFramework\Core\Utility\Utility.PointTools.cs" />
     <Compile Include="Assets\Scripts\YFramework\Core\Common\Interface\Operator\IPool.cs" />
+    <Compile Include="Assets\Scripts\YFramework\Core\Utility\Utility.PointTools.cs" />
     <Compile Include="Assets\Scripts\YFramework\Core\Module\PoolModule\ClassPoolModule\ClassPool.cs" />
     <Compile Include="Assets\Scripts\YFramework\Core\Mono\UI\Text\TextSpacing.cs" />
     <Compile Include="Assets\Scripts\Core\Controller\Init\ChildController\Process\LoadConfigProcess.cs" />
@@ -646,14 +649,23 @@
     <Reference Include="UnityEditor.UnityConnectModule">
       <HintPath>C:\Unity\2021.3.21f1c1\Editor\Data\Managed\UnityEngine\UnityEditor.UnityConnectModule.dll</HintPath>
     </Reference>
-    <Reference Include="Aliyun.OSS">
-      <HintPath>Assets\Plugins\Aliyun\Aliyun.OSS.dll</HintPath>
+    <Reference Include="Unity.Burst.Cecil.Mdb">
+      <HintPath>Library\PackageCache\com.unity.burst@1.8.2\Unity.Burst.CodeGen\Unity.Burst.Cecil.Mdb.dll</HintPath>
     </Reference>
     <Reference Include="NPinYin">
       <HintPath>Assets\Plugins\PinYin\NPinYin.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.Burst.Cecil.Pdb">
+      <HintPath>Library\PackageCache\com.unity.burst@1.8.2\Unity.Burst.CodeGen\Unity.Burst.Cecil.Pdb.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Burst.Cecil">
+      <HintPath>Library\PackageCache\com.unity.burst@1.8.2\Unity.Burst.CodeGen\Unity.Burst.Cecil.dll</HintPath>
+    </Reference>
     <Reference Include="dnlib">
       <HintPath>Library\PackageCache\com.code-philosophy.hybridclr@410bb9b542\Plugins\dnlib.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Burst.Cecil.Rocks">
+      <HintPath>Library\PackageCache\com.unity.burst@1.8.2\Unity.Burst.CodeGen\Unity.Burst.Cecil.Rocks.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualScripting.Antlr3.Runtime">
       <HintPath>Library\PackageCache\com.unity.visualscripting@1.8.0\Runtime\VisualScripting.Flow\Dependencies\NCalc\Unity.VisualScripting.Antlr3.Runtime.dll</HintPath>
@@ -1048,8 +1060,14 @@
     <Reference Include="Unity.VSCode.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.VSCode.Editor.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.VisualScripting.Shared.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.Shared.Editor.dll</HintPath>
+    <Reference Include="Unity.RenderPipelines.Universal.Shaders">
+      <HintPath>Library\ScriptAssemblies\Unity.RenderPipelines.Universal.Shaders.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.RenderPipelines.Universal.Runtime">
+      <HintPath>Library\ScriptAssemblies\Unity.RenderPipelines.Universal.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="PPv2URPConverters">
+      <HintPath>Library\ScriptAssemblies\PPv2URPConverters.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll</HintPath>
@@ -1063,9 +1081,6 @@
     <Reference Include="Unity.TestTools.CodeCoverage.Editor.OpenCover.Model">
       <HintPath>Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.OpenCover.Model.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.Timeline.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.Timeline.Editor.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.Timeline">
       <HintPath>Library\ScriptAssemblies\Unity.Timeline.dll</HintPath>
     </Reference>
@@ -1077,6 +1092,15 @@
     </Reference>
     <Reference Include="Unity.VisualScripting.State.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.State.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Burst.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.Burst.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Searcher.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.Searcher.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.RenderPipelines.Core.Runtime">
+      <HintPath>Library\ScriptAssemblies\Unity.RenderPipelines.Core.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualScripting.SettingsProvider.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.SettingsProvider.Editor.dll</HintPath>
@@ -1096,17 +1120,14 @@
     <Reference Include="Unity.Rider.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.Rider.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.RenderPipelines.Core.ShaderLibrary">
+      <HintPath>Library\ScriptAssemblies\Unity.RenderPipelines.Core.ShaderLibrary.dll</HintPath>
+    </Reference>
     <Reference Include="HybridCLR.Editor">
       <HintPath>Library\ScriptAssemblies\HybridCLR.Editor.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.TestTools.CodeCoverage.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.dll</HintPath>
-    </Reference>
     <Reference Include="UnityEngine.UI">
       <HintPath>Library\ScriptAssemblies\UnityEngine.UI.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.VisualScripting.State">
-      <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.State.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualScripting.Core">
       <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.Core.dll</HintPath>
@@ -1114,8 +1135,52 @@
     <Reference Include="Unity.EditorCoroutines.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.EditorCoroutines.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.Mathematics">
+      <HintPath>Library\ScriptAssemblies\Unity.Mathematics.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.ShaderGraph.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.ShaderGraph.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Burst">
+      <HintPath>Library\ScriptAssemblies\Unity.Burst.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.RenderPipelines.Universal.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.RenderPipelines.Universal.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.VisualScripting.Shared.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.Shared.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.RenderPipeline.Universal.ShaderLibrary">
+      <HintPath>Library\ScriptAssemblies\Unity.RenderPipeline.Universal.ShaderLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Timeline.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.Timeline.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary">
+      <HintPath>Library\ScriptAssemblies\Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Mathematics.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.Mathematics.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.TestTools.CodeCoverage.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.RenderPipelines.Core.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.RenderPipelines.Core.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.VisualScripting.State">
+      <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.State.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
+      <Project>{229B869A-E2D2-25EF-7C1B-1E3C3FD660BB}</Project>
+      <Name>Assembly-CSharp-firstpass</Name>
+    </ProjectReference>
+    <ProjectReference Include="CsWillUse.csproj">
+      <Project>{C91A89C1-F784-D86E-048D-92E680E79D6C}</Project>
+      <Name>CsWillUse</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />

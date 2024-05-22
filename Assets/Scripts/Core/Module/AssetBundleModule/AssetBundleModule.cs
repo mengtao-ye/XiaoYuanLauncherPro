@@ -30,13 +30,13 @@ namespace Game
             LoadDll dll = new LoadDll();
             string hotbasePath = GetAssetPath(packageName, "hotbase");
             byte[] dllData = File.ReadAllBytes(hotbasePath);
-            EncryptionTools.Decryption(dllData);
+         
             dll.Init("HotBase.dll", dllData );
             pair.dll = dll;
             AssetBundleManager assetBundleManager = new AssetBundleManager(packageName);
             string configPath = GetAssetPath(packageName,"config");
             byte[] abData = File.ReadAllBytes(configPath);
-            EncryptionTools.Decryption(abData);
+         
             assetBundleManager.Init(abData);
             pair.assetBundleManager = assetBundleManager;
             mDict.Add(packageName, pair);

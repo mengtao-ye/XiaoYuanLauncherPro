@@ -42,5 +42,10 @@ namespace Game
         /// </summary>
         public const string UITipsParentPath = "Prefabs/UI/TipsUI/";
         #endregion
+
+        /// <summary>
+        ///  项目目录地址
+        /// </summary>
+        public static string ProjectDir { get; private set; } = Application.dataPath.Replace("/Assets", "");
     }
 }

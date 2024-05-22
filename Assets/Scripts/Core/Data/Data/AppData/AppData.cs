@@ -11,9 +11,7 @@
         {
             get
             {
-#if UNITY_WINDOW
-          return "Windows";
-#elif UNITY_ANDROID
+#if UNITY_ANDROID
                 return "Android";
 #elif UNITY_IOS
          return "iOS";

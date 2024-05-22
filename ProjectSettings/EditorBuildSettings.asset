@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MainScene.unity
     guid: 4d6601b2ecc56e048a718132a7ea3975
+  - enabled: 1
+    path: Assets/Scenes/MetaSchoolScene.unity
+    guid: 2a4d05a6ce9816d4ca3305934463b212
   m_configObjects: {}

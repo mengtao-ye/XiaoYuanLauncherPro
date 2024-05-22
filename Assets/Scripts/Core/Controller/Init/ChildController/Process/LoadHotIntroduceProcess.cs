@@ -31,13 +31,9 @@ namespace Game
         private void LoadIntroduce()
         {
             string introduceOssPath = OssData.GetOssHotFilePath(version, "Introduce.txt");
-            AliyunOSSTools.Instance.LoadOssString(introduceOssPath, LoadProcess, LoadIntroduceSuccess, LoadIntroduceFail);
+           HttpTools.GetText(introduceOssPath, LoadIntroduceSuccess, LoadIntroduceFail);
         }
 
-        private void LoadProcess(float process)
-        {
-
-        }
         private void LoadIntroduceFail(string content)
         {
             LogHelper.LogError("新资源介绍为空,Error:" + content);
@@ -69,7 +65,7 @@ namespace Game
         private void RetryDownLoadIntroduce()
         {
             string introduceOssPath = OssData.GetOssHotFilePath(version, "Introduce.txt");
-            AliyunOSSTools.Instance.LoadOssString(introduceOssPath, LoadProcess, LoadIntroduceSuccess, LoadIntroduceFail);
+            HttpTools.GetText (introduceOssPath,LoadIntroduceSuccess, LoadIntroduceFail);
         }
 
         /// <summary>

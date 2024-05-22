@@ -1,4 +1,5 @@
 ﻿using System.IO;
+using UnityEngine;
 using YFramework;
 using static YFramework.Utility;
 
@@ -22,7 +23,7 @@ namespace Game
         private void LoadAppHotVersionFile()
         {
             string ossVersionPath = OssData.GetOssHotVersionPath();
-            AliyunOSSTools.Instance.LoadOssString(ossVersionPath, LoadProcess, LoadHotVersionSuccess, LoadVersionFail);
+            HttpTools.GetText(ossVersionPath, LoadHotVersionSuccess, LoadVersionFail);
         }
 
         /// <summary>
@@ -32,7 +33,8 @@ namespace Game
         private void LoadVersionFail(string str)
         {
             LogHelper.LogError("热更版本数据加载失败,Error:" + str);
-            AppTools.ShowTipsUI<CommonTwoSelectTipUI>((ui) => {
+            AppTools.ShowTipsUI<CommonTwoSelectTipUI>((ui) =>
+            {
                 ui.ShowContent("热更版本数据下载失败，是否重试？", "资源下载失败", "退出", "重试", LoadVersionSureCallBack, LoadCancelCallBack);
             });
         }
@@ -78,10 +80,7 @@ namespace Game
            (processManager as ProcessManager<LoadOssCondition>).condition.hotVersion = mHotVersion;
             DoNext();
         }
-        private void LoadProcess(float process)
-        {
 
-        }
         /// <summary>
         /// 版本文件下载失败回调
         /// </summary>

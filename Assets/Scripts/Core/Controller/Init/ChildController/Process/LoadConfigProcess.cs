@@ -1,4 +1,7 @@
-﻿using YFramework;
+﻿using System.IO;
+using UnityEngine;
+using YFramework;
+using static YFramework.Utility;
 
 namespace Game
 {
@@ -29,8 +32,16 @@ namespace Game
         {
             string version = mManager.condition.version;    
             mController.initPanel.SetContent("加载主数据配置表");
-            string configPath = OssData.GetOssOriginalFilePath(version, "ABFileConfig.bytes");
-            AliyunOSSTools.Instance.LoadOssBytes(configPath, LoadProcess, LoadConfigSuccessCallback, LoadConfigFailCallback);
+            string localABFileConfigPath = OssData. GetLocalOriginalDir(ABTag.Main) + "/ABFileConfig.bytes";
+            if (File.Exists(localABFileConfigPath))
+            {
+                LoadConfig(File.ReadAllBytes(localABFileConfigPath));
+            }
+            else
+            {
+                string configPath = OssData.GetOssOriginalFilePath(version, "ABFileConfig.bytes");
+               HttpTools.GetBytes(configPath, LoadProcess, DownLoadConfigSuccess, LoadConfigFailCallback);
+            }
         }
         /// <summary>
         /// 版本文件下载失败回调
@@ -44,7 +55,14 @@ namespace Game
             });
         }
 
-        private void LoadConfigSuccessCallback(byte[] bytes)
+        private void DownLoadConfigSuccess(byte[] bytes)
+        {
+            string localABFileConfigPath = OssData.GetLocalOriginalDir(ABTag.Main) + "/ABFileConfig.bytes";
+            File.WriteAllBytes(localABFileConfigPath,bytes);
+            LoadConfig(bytes);
+        }
+
+        private void LoadConfig(byte[] bytes)
         {
             AssetBundleFileData data = AliyunOSSTools.Instance.LoadFileConfig(bytes);
             if (data == null)
