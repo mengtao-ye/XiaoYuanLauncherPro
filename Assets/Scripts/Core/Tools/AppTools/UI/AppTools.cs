@@ -33,9 +33,9 @@ namespace Game
         /// 获取提示UI
         /// </summary>
         /// <typeparam name="T"></typeparam>
-        public static void GetTipsUI<T>(Action<T> action = null) where T : BaseCustomTipsUI, new()
+        public static T GetTipsUI<T>() where T : BaseCustomTipsUI, new()
         {
-             GameCenter.Instance.curCanvas.showTipsPanel.GetTipsUI<T>(action);
+             return GameCenter.Instance.curCanvas.showTipsPanel.FindTipsPanel<T>();
         }
         /// <summary>
         /// 显示提示Panel

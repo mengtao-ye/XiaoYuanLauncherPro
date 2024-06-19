@@ -190,6 +190,7 @@
     <Compile Include="Assets\Scripts\YFramework\Core\Module\ToTween\Extend\Transform\AnchorPosition\ToTweenExtend.cs" />
     <Compile Include="Assets\Scripts\YFramework\Core\Module\BoardCastModule\BoardCastModule.cs" />
     <Compile Include="Assets\Scripts\Core\Tools\BatTools\EdtUtil.cs" />
+    <Compile Include="Assets\Scripts\YFramework\Core\Module\PoolModule\TargetPoolModule\TargetPoolModule.cs" />
     <Compile Include="Assets\Scripts\Core\Tools\PinYinTools\PinYinTools.cs" />
     <Compile Include="Assets\Scripts\YFramework\Core\Main\Center.cs" />
     <Compile Include="Assets\Scripts\Core\Manager\LiveManager\Main\LiveManager.cs" />

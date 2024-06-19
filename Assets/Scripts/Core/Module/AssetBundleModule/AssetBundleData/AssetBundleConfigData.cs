@@ -21,7 +21,7 @@ namespace Game
 
         public void ToValue(byte[] data)
         {
-            IListData<ABBase> abBase = data.ToListBytes<ABBase>();
+            IListData<ABBase> abBase = data.ToListDataBytes<ABBase>();
             ABList = new List<ABBase>(abBase.Count);
             for (int i = 0; i < abBase.Count; i++)
             {

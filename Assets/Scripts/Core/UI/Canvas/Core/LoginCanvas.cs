@@ -1,4 +1,5 @@
-﻿using YFramework;
+﻿using UnityEngine;
+using YFramework;
 
 namespace Game
 {
@@ -10,6 +11,7 @@ namespace Game
         public override void Awake()
         {
             base.Awake();
+           Debug.Log( GameCenter.Instance.UnityToAndroid(1,1,1,1,"","","'"));
         }
     }
 }

@@ -13,7 +13,7 @@ namespace Game
         #region Field
         public Center center { get; private set; } = null;
         private XiaoYuanSceneManager mSceneManager;
-        //private BridgeManager mBridgeManager;
+        private BridgeManager mBridgeManager;
         public IScene curScene { get { return mSceneManager.curScene; } }
         public ICanvas curCanvas { get { return mSceneManager.curScene.canvas; } }
         public IModel curModel { get { return mSceneManager.curScene.model; } }
@@ -62,11 +62,11 @@ namespace Game
             processController = new ProcessController();
             center = new Center();
             mSceneManager = new XiaoYuanSceneManager(center, new SceneMapper());
-            //mBridgeManager = new BridgeManager(center);
+            mBridgeManager = new BridgeManager(center);
             packageBridgeManaegr = new PackageBridgeManager(center);
             ConfigSceneManager();
             center.AddGame(packageBridgeManaegr);
-            //center.AddGame(mBridgeManager);
+            center.AddGame(mBridgeManager);
             center.AddGame(mSceneManager);
             center.Awake();
             
@@ -119,9 +119,9 @@ namespace Game
         /// 获取提示UI
         /// </summary>
         /// <typeparam name="T"></typeparam>
-        public void GetTipsUI<T>(Action<T> action = null) where T : BaseCustomTipsUI, new()
+        public T GetTipsUI<T>() where T : BaseCustomTipsUI, new()
         {
-             curCanvas.showTipsPanel.GetTipsUI<T>(action);
+            return curCanvas.showTipsPanel.FindTipsPanel<T>();
         }
         /// <summary>
         /// 显示提示Panel
@@ -178,14 +178,14 @@ namespace Game
         }
         #endregion
         #region 原生之间调用
-        //public string UnityToAndroid(int id, int value1, int value2, int value3, string str1, string str2, string str3)
-        //{
-        //    if (mBridgeManager.isRun)
-        //    {
-        //        return mBridgeManager.UnityToAndroid(id, value1, value2, value3, str1, str2, str3);
-        //    }
-        //    return null;
-        //}
+        public string UnityToAndroid(int id, int value1, int value2, int value3, string str1, string str2, string str3)
+        {
+            if (mBridgeManager.isRun)
+            {
+                return mBridgeManager.UnityToAndroid(id, value1, value2, value3, str1, str2, str3);
+            }
+            return null;
+        }
         #endregion
     }
 }
